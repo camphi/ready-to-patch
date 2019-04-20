@@ -36,7 +36,7 @@ _patch() {
         exit 1
     fi
     if [[ $PATCH_STATUS -eq 2 ]] ; then
-        echo -e "ERROR."
+        echo "ERROR."
         exit 2
     fi
 }
