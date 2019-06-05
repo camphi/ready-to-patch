@@ -29,7 +29,7 @@ _patch() {
         DRY_RUN_FLAG="--dry-run"
         echo "Checking..."
     fi
-    PATCH_RESULT=`sed -e '1,/^__DIFF_FOLLOWS__$/d' "$CURRENT_DIR""$BASE_NAME" | patch $DRY_RUN_FLAG $REVERT_FLAG -p0`
+    PATCH_RESULT=`sed -e '1,/^__DIFF_FOLLOWS__$/d' "$CURRENT_DIR""$BASE_NAME" | patch $DRY_RUN_FLAG $REVERT_FLAG -p1`
     PATCH_STATUS=$?
     if [[ $PATCH_STATUS -eq 1 ]] ; then
         echo -e "ERROR:\n$PATCH_RESULT"
